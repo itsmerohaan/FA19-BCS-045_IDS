@@ -27,3 +27,4 @@ for city,lat,long,tc,de,re,ac in zip(list(df['Cities']),list(df['Latitude']),lis
     
 
 kpk_map
+
