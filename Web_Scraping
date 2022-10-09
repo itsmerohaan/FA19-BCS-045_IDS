@@ -1,0 +1,11 @@
+import requests
+from bs4 import BeautifulSoup
+headers = {'User-agent': 'Mozilla/5.0'}
+
+request = requests.get("https://www.bbc.com/urdu", headers=headers)
+html = request.content
+
+soup = BeautifulSoup(html, 'html.parser')
+print(soup.prettify())
+for row in soup.find_all('a', attrs = {'class':'bbc-1fxtbkn ecljyjm0'}):
+  print (row.span.text)
